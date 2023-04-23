@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
+import mjml2html from "mjml-browser";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -12,10 +13,29 @@ function App() {
     setGreetMsg(await invoke("greet", { name }));
   }
 
+  const options = {
+    minify: true,
+  };
+  const htmlOutput = mjml2html(
+    `
+    <mjml>
+        <mj-body>
+              <mj-section>
+                      <mj-column>
+                                <mj-text>
+                                            Hello World!
+                                                      </mj-text>
+                                                              </mj-column>
+                                                                    </mj-section>
+                                                                        </mj-body>
+                                                                          </mjml>
+                                                                          `,
+    options
+  );
   return (
     <div className="container">
       <h1>Welcome to Tauri!</h1>
-
+      <div dangerouslySetInnerHTML={{ __html: htmlOutput.html }}></div>
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo vite" alt="Vite logo" />

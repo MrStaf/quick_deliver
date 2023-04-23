@@ -8,6 +8,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@vitejs/plugin-react': ^3.0.0
   autoprefixer: ^10.4.14
+  mjml-browser: ^4.14.1
   postcss: ^8.4.23
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -17,6 +18,7 @@ specifiers:
 
 dependencies:
   '@tauri-apps/api': 1.2.0
+  mjml-browser: 4.14.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -1065,6 +1067,10 @@ packages:
     dependencies:
       brace-expansion: 1.1.11
     dev: true
+
+  /mjml-browser/4.14.1:
+    resolution: {integrity: sha512-kkY43kYTGfw0qL251GrG3hdQvKeeKAzxgM+zFd97Pay2nZX06W9V6rm03zCfnOQdwGM90xMOBF+x9SIhRPkiJQ==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
