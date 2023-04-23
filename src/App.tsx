@@ -29,7 +29,9 @@ function App() {
       </div>
 
       <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
+      <h1 className="font-3xl bg-slate-900 text-white my-4">
+        Tailwind is working
+      </h1>
       <div className="row">
         <form
           onSubmit={(e) => {
