@@ -33,41 +33,32 @@ function App() {
     options
   );
   return (
-    <div className="container">
-      <h1>Welcome to Tauri!</h1>
-      <div dangerouslySetInnerHTML={{ __html: htmlOutput.html }}></div>
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-      <h1 className="font-3xl bg-slate-900 text-white my-4">
-        Tailwind is working
-      </h1>
-      <div className="row">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            greet();
-          }}
-        >
-          <input
-            id="greet-input"
-            onChange={(e) => setName(e.currentTarget.value)}
-            placeholder="Enter a name..."
-          />
-          <button type="submit">Greet</button>
-        </form>
-      </div>
-      <p>{greetMsg}</p>
+    <div className="flex flex-row bg-white h-screen">
+      <nav className="flex flex-col px-8 pt-10 gap-4 border-slate-300 border-r">
+        <div>Draft</div>
+        <div>Template</div>
+      </nav>
+      <nav className="flex flex-col">
+        <div className="hover:bg-slate-100 px-8 w-full">
+          <div className="text-sm text-slate-400 font-medium">Sender</div>
+          <div className="text-lg font-medium">John Doe</div>
+        </div>
+      </nav>
+      <main className="flex flex-col px-8 border-slate-300 border-l">
+        <div>
+          <div className="text-sm text-slate-400 font-medium">Sender</div>
+          <p className="text-md text-slate-700 font-bold">Object: test</p>
+          <button
+            onClick={() => {
+              // copy to clipboard
+              navigator.clipboard.writeText(htmlOutput.html);
+            }}
+          >
+            copy
+          </button>
+          <div dangerouslySetInnerHTML={{ __html: htmlOutput.html }}></div>
+        </div>
+      </main>
     </div>
   );
 }
